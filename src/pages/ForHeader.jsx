@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header";
-import ModalAdd from "../components/ModalAdd";
+import {ModalAdd} from "../components/ModalAdd";
 import { useDispatch, useSelector } from "react-redux";
 import { showModal, hideModal } from "../redux/module/modal/Actions";
 import { addList, editLists } from "../redux/module/list/Actions";
@@ -8,10 +8,10 @@ import { openEdit } from "../redux/module/list/editList/Actions";
 
 const ForHeader = () => {
   const dispatch = useDispatch();
+
   const modal = useSelector((state) => state.modal.openModal);
   const edit = useSelector((state) => state.edit.edit);
-  const newList=useSelector(state=>state.newLists.newLists)
-
+  const newList = useSelector((state) => state.newLists.newLists);
 
   const visibleModal = () => {
     dispatch(showModal());
@@ -26,10 +26,10 @@ const ForHeader = () => {
     dispatch(openEdit());
   };
   const closeEdit = () => {
-    console.log('new list is here', newList)
+    console.log("new list is here", newList);
     dispatch(editLists(newList));
   };
-  
+
   return (
     <>
       <Header
@@ -37,7 +37,6 @@ const ForHeader = () => {
         editList={editList}
         openModal={visibleModal}
         edit={edit}
-
       />
       <ModalAdd
         createNewList={createNewList}

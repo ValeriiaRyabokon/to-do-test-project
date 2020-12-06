@@ -1,7 +1,7 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -9,13 +9,13 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(3),
-    textAlign: 'center',
-    background:'#FFD073',
+    textAlign: "center",
+    background: "#FFD073",
     color: theme.palette.text.secondary,
   },
 }));
 
-export default function List({name, id}) {
+export const List = ({ name, id }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -28,4 +28,4 @@ export default function List({name, id}) {
       </Grid>
     </div>
   );
-}
+};

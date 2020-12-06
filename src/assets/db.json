@@ -1,27 +1,30 @@
 {
     "lists": [{
-            "name": "Bla bla bl",
-            "id": 1
-        },
-        {
-            "id": 2,
-            "name": "Hi honey hk"
-        },
-        {
-            "name": "hello",
-            "id": 3
-        },
-        {
-            "name": "hello hello hello\n",
-            "id": 4
-        },
-        {
-            "name": "Hi honey h",
-            "id": 5
-        },
-        {
-            "name": "mi",
-            "id": 6
-        }
-    ]
+        "items": [{
+                "id": 1,
+                "name": "Something"
+            },
+            {
+                "id": 2,
+                "name": "Something"
+            },
+            {
+                "name": "Something",
+                "id": 3
+            },
+            {
+                "name": "Something",
+                "id": 4
+            },
+            {
+                "name": "Something",
+                "id": 5
+            },
+            {
+                "name": "Something",
+                "id": 6
+            }
+        ],
+        "id": 1
+    }]
 }

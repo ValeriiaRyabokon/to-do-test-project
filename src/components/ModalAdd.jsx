@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ModalAdd = ({ visible, unVisible, createNewList }) => {
+export const ModalAdd = ({ visible, unVisible, createNewList }) => {
   const classes = useStyles();
   const [inputValue, setInputValue] = useState("");
 
@@ -86,4 +86,3 @@ const ModalAdd = ({ visible, unVisible, createNewList }) => {
   );
 };
 
-export default ModalAdd;

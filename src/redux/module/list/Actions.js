@@ -7,9 +7,10 @@ export function axiosLists() {
     return dispatch => {
         dispatch(showLoader())
         axios
-            .get("http://localhost:3001/lists")
+            .get("http://localhost:3001/lists/1")
             .then(({ data }) => {
-                dispatch({ type: AXIOS_LISTS, payload: data })
+                console.log(data)
+                dispatch({ type: AXIOS_LISTS, payload: data.items })
             });
         dispatch(hideLoader())
     }
@@ -17,7 +18,7 @@ export function axiosLists() {
 export function addList(list) {
     return dispatch => {
         axios
-            .post("http://localhost:3001/lists", {
+            .post("http://localhost:3001/lists/1", {
                 name: list,
             })
             .then(({ data }) => {
@@ -37,12 +38,12 @@ export function editLists(newList) {
     console.log('we are start', newList)
     return dispatch => {
         axios
-            .put("http://localhost:3001/lists", {
-                newList
+            .put("http://localhost:3001/lists/1", {
+                items: newList
             })
             .then(({ data }) => {
                 console.log('new list is', data)
-                dispatch({ type: EDIT_LISTS, payload: data })
+                dispatch({ type: EDIT_LISTS, payload: data.items })
             })
             .catch(() => {
                 console.log("Не вдалося оновити список");
