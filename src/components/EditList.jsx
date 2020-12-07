@@ -15,13 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EditList({ name, id, newLists }) {
+export const EditList = ({ name, id, newLists }) => {
   const [newList, setNewList] = useState(name);
   const classes = useStyles();
-   const editList=(e)=>{
+  const editList = (e) => {
     setNewList(e.target.value);
     newLists(id, newList);
-   }
+  };
 
   return (
     <div className={classes.root}>
@@ -41,4 +41,4 @@ export default function EditList({ name, id, newLists }) {
       </Grid>
     </div>
   );
-}
+};

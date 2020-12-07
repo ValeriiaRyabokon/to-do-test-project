@@ -1,6 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header";
-import {ModalAdd} from "../components/ModalAdd";
+import { ModalAdd } from "../components/ModalAdd";
 import { useDispatch, useSelector } from "react-redux";
 import { showModal, hideModal } from "../redux/module/modal/Actions";
 import { addList, editLists } from "../redux/module/list/Actions";
@@ -26,7 +26,6 @@ const ForHeader = () => {
     dispatch(openEdit());
   };
   const closeEdit = () => {
-    console.log("new list is here", newList);
     dispatch(editLists(newList));
   };
 

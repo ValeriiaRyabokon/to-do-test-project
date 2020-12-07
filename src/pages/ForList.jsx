@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { CircularProgress } from "@material-ui/core";
-import {List} from "../components/List";
+import { List } from "../components/List";
 import { useDispatch, useSelector } from "react-redux";
 import { axiosLists } from "../redux/module/list/Actions";
-import {EditList} from "../components/EditList";
+import { EditList } from "../components/EditList";
 import { editList } from "../redux/module/list/Actions";
 
 const ForList = () => {
@@ -42,13 +42,16 @@ const ForList = () => {
       {edit
         ? lists.map((list) => (
             <EditList
+              key={list.id}
               name={list.name}
               id={list.id}
               newLists={newLists}
               edit={edit}
             />
           ))
-        : lists.map((list) => <List name={list.name} id={list.id} />)}
+        : lists.map((list) => (
+            <List name={list.name} id={list.id} key={list.id} />
+          ))}
     </div>
   );
 };

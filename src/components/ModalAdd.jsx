@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   dialogTitle: {
     textAlign: "center",
     background: "#7B68EE",
-    color:'white'
+    color: "white",
   },
 }));
 
@@ -68,7 +68,7 @@ export const ModalAdd = ({ visible, unVisible, createNewList }) => {
             onClick={() => newList(inputValue)}
             variant="contained"
             style={{
-              background:'#FFC15A'
+              background: "#FFC15A",
             }}
           >
             Create
@@ -85,4 +85,3 @@ export const ModalAdd = ({ visible, unVisible, createNewList }) => {
     </div>
   );
 };
-

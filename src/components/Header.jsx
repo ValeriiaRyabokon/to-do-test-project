@@ -12,19 +12,18 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-   height:'150px',
-   background:'#7B68EE',
-
+    height: "150px",
+    background: "#7B68EE",
   },
   toolbar: {
     display: "flex",
     flexDirection: "column",
-    padding:'20px'
+    padding: "20px",
   },
-  buttonStyle:{
-    marginLeft:'24px',
-    background:'#FFC15A'
-  }
+  buttonStyle: {
+    marginLeft: "24px",
+    background: "#FFC15A",
+  },
 }));
 
 export const Header = ({ openModal, editList, edit, closeEdit }) => {
@@ -35,7 +34,7 @@ export const Header = ({ openModal, editList, edit, closeEdit }) => {
       <AppBar position="fixed" className={classes.root}>
         <Container fixed>
           <Toolbar className={classes.toolbar}>
-            <Typography variant="h4" gutterBottom paragraph >
+            <Typography variant="h4" gutterBottom paragraph>
               TO DO LIST
             </Typography>
             <span
@@ -48,34 +47,34 @@ export const Header = ({ openModal, editList, edit, closeEdit }) => {
                   onClick={() => openModal()}
                   size="medium"
                   variant="contained"
-
                   className={classes.buttonStyle}
                 >
                   ADD
                 </Button>
               </Box>
-              {
-              edit? <Box mr={3}>
-                <Button
-                onClick={()=>closeEdit()}
-                className={classes.buttonStyle}
-                  size="medium"
-                  variant="contained"
-                >
-                  SAVE
-                </Button>
-              </Box> :
-              <Box mr={3}>
-              <Button
-              onClick={()=>editList()}
-              className={classes.buttonStyle}
-                size="medium"
-                variant="contained"
-              >
-                EDIT
-              </Button>
-            </Box>
-            }
+              {edit ? (
+                <Box mr={3}>
+                  <Button
+                    onClick={() => closeEdit()}
+                    className={classes.buttonStyle}
+                    size="medium"
+                    variant="contained"
+                  >
+                    SAVE
+                  </Button>
+                </Box>
+              ) : (
+                <Box mr={3}>
+                  <Button
+                    onClick={() => editList()}
+                    className={classes.buttonStyle}
+                    size="medium"
+                    variant="contained"
+                  >
+                    EDIT
+                  </Button>
+                </Box>
+              )}
             </span>
           </Toolbar>
         </Container>
